@@ -1,14 +1,105 @@
-<p style="color: green"><%= notice %></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Carlys Application</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 
-<h1>Projects</h1>
+  <style>
+    .button {
+      background-color: Black;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto"
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Account
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Sign In</a></li>
+              <li><a class="dropdown-item" href="#">Sign Up</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+  </nav>
+  <h1 class="display-4">My Portfolio</h1>
 
-<div id="projects">
-  <% @projects.each do |project| %>
-    <%= render project %>
-    <p>
-      <%= link_to "Show this project", project %>
-    </p>
-  <% end %>
+  <p>
+    My name is Carly Beal and I am majoring in a
+    <a href="https://innovation.uccs.edu/coeas/computer-security">BI in Computer Security at UCCS</a>.
+  </p>
+
+  <div class="container border">
+    <p>Programming Languages</p>
+    <li>C</li>
+    <li>C++</li>
+    <li>Python</li>
+    </br>
+  </div>
+
+  <div class="container border">
+    <p>Technical Skills</p>
+    <li>Proficient in Excel</li>
+    <li>Shell Scripting</li>
+    <li>Technical Writing</li>
+    </br>
+  </div>
+
+  <div class="container border">
+    <p>Soft Skills</p>
+    <li>Communication</li>
+    <li>Teamwork</li>
+    <li>Critical Thinking</li>
+    </br>
+  </div>
+
+  </br>
+
+<div class="card border-primary mb-3" style="max-width: 18rem;">
+  <div class="card-header">Project Title 1</div>
+  <div class="card-body text-primary">
+    <p class="card-text">Description of Project 1</p>
+    <%= link_to "Show this project", "#", :class => "button" %>
+  </div>
+  </div>
+</div>
+  
+<div class="card border-primary mb-3" style="max-width: 18rem;">
+  <div class="card-header">Project Title 2</div>
+  <div class="card-body text-primary">
+    <p class="card-text">Description of Project 2</p>
+    <%= link_to "Show this project", "#", :class => "button" %>
+  </div>
+  </div>
 </div>
 
-<%= link_to "New project", new_project_path %>
+<div class="card border-primary mb-3" style="max-width: 18rem;">
+  <div class="card-header">Project Title 3</div>
+  <div class="card-body text-primary">
+    <p class="card-text">Description of Project 3</p>
+    <%= link_to "Show this project", "#", :class => "button" %>
+  </div>
+  </div>
+</div>
+
+</body>
+</html>
