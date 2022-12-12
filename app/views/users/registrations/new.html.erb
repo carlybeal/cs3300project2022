@@ -1,29 +1,78 @@
-<h2>Sign up</h2>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Sign up</title>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
+  </head>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <style>
+      h1{
+          text-align: center;
+          font-size: 50px;
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+      }
+      h2{
+          text-align:center;
+      }
+      .offset{
+        background: #d3d3d3; 
+        font-weight: bold;
+      }
+    </style>
+      
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+<div class="container-fluid border border-dark my-2 gx-2 offset" style="font-weight: bold">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <div class="row my-2 mx-2 border border-dark">
+    
+      <div class="col my-2 mx-2" style="font-weight: bold">
+        <%= render "users/shared/error_messages", resource: resource %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+      <h2 style="text-decoration: underline">Sign up</h2>
+    <div class="row my-4 mx-auto border border-secondary">
+      <div class="col my-2" style="font-weight: bold">
+      
+        <div class="field">
+          <%= f.label :email %>
+          <%= f.email_field :email, style: "width: 100%", autofocus: true, autocomplete: "email" %>
+        </div>
+      </div>
+    </div>
 
-<%= render "users/shared/links" %>
+    <div class="row my-4 mx-auto border border-secondary">
+      <div class="col my-2" style="font-weight: bold">
+        <div class="field">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, style: "width: 100%", autocomplete: "new-password" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row my-4 mx-auto border border-secondary">
+      <div class="col my-2" style="font-weight: bold">
+        <div class="field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, style: "width: 100%", autocomplete: "new-password" %>
+        </div>
+      </div>
+    </div>
+
+        <div class="actions">
+          <%= f.submit "Sign up" %>
+          <%= render "users/shared/links" %>
+        </div>
+
+</div>
+  <% end %>

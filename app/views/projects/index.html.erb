@@ -11,19 +11,6 @@
 
   
   <style>
-    .button {
-      background-color: Black;
-      border: none;
-      color: white;
-      padding: 15px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      cursor: pointer;
-    }
-
     h1{
       text-align: center;
       font-size: 50px;
@@ -43,7 +30,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto"
           <li class="nav-item active">
-            <a class="nav-link" <%= link_to 'Home', projects_path %> </a>
+            <a class="nav-link" href="http://localhost:3000">Home</a>
           </li>
           
           <li class="nav-item dropdown">
@@ -94,32 +81,22 @@
   </div>
 
   </br>
+  <h2 align="center">Projects</h2>
 
-<div class="card border-primary mx-auto" style="max-width: 60rem;">
-  <div class="card-header">Project Title 1</div>
-  <div class="card-body text-primary">
-    <p class="card-text">Description of Project 1</p>
-    <%= link_to "Show this project", "#", :class => "button" %>
-  </div>
-  </div>
-</div>
-  
-<div class="card border-primary mx-auto" style="max-width: 60rem;">
-  <div class="card-header">Project Title 2</div>
-  <div class="card-body text-primary">
-    <p class="card-text">Description of Project 2</p>
-    <%= link_to "Show this project", "#", :class => "button" %>
-  </div>
-  </div>
-</div>
-
-<div class="card border-primary mx-auto" style="max-width: 60rem;">
-  <div class="card-header">Project Title 3</div>
-  <div class="card-body text-primary">
-    <p class="card-text">Description of Project 3</p>
-    <%= link_to "Show this project", "#", :class => "button" %>
-  </div>
-  </div>
+  <div class="container border">
+  <ul class="list-group" align="center">
+  <% @projects.each do |project| %>
+    <li class="list-group-item">
+      <%= render project %>
+      <p>
+        <%= button_to "Show this project", project, class: 'btn btn-dark btn-lg', method: :get %>
+      </p>
+    </li>
+  <% end %>
+  <li class="list-group-item new">
+    <%= button_to "New project",new_project_path, class: 'btn btn-dark btn-lg newButton', method: :get  %>
+  </li>
+</ul>
 </div>
 
 </body>

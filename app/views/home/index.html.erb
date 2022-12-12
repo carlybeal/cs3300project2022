@@ -1,35 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CS3300 Portfolio Project</title>
 
-  </head>
+<!-- START HEAD -->
+<head> 
+  <title>Carlys Application</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+
   
-  <body>
-    <div style="margin: 5% 0 0 10%;">
-    <h1>
-    <a href="http://localhost:3000/projects">Projects</a>
-    </h1>   
-    <h1>CS 3300 Portfolio Project - Fall 2022</h1>
+  <style>
+    h1{
+      text-align: center;
+      font-size: 50px;
+    }
+    h2{
+      text-align: center;
+      font-size: 40px;
+    }
+  </style>
+</head>
+<!-- END HEAD -->
+
+
+<!-- START BODY -->
+<div class="container-fluid border border-dark my-2 gx-2 offset" style="font-weight: bold">
+  <body style = "background-color: #d3d3d3;">
+    <div style="margin: 5% 0 0 5%;">
+    <h1 style="text-decoration: underline">CS 3300 Portfolio Project - Fall 2022</h1>
 
       <div style="padding-left: 2rem;">
-        <h4 style="color: blue"> Carly Beal </h3>
+        <h2 style="color: #0c72f9"> Carly Beal - <a href="http://localhost:3000/projects">Projects</a></h2>
         
-
-        <!--- Explain what the block of code below this line is doing --->
-
+        <h2>
         <% if user_signed_in? %>
           
           <div> Welcome <%= current_user.email %> </div>
           <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
-        
         <% else %>
           <a href="/users/sign_in"> Sign in</a>
         <% end %>
-
+        </h2>
       </div>
     </div>
   </body>
